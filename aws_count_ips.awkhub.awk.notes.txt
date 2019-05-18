@@ -1,0 +1,66 @@
+awk -f aws_count_ips.awkhub.awk aws_ip_list_input.awkhub
+82,490,472
+
+
+curl -s https://ip-ranges.amazonaws.com/ip-ranges.json  | more
+{
+  "syncToken": "1558047544",
+  "createDate": "2019-05-16-22-59-04",
+  "prefixes": [
+    {
+      "ip_prefix": "18.208.0.0/13",
+      "region": "us-east-1",
+      "service": "AMAZON"
+    },
+    {
+      "ip_prefix": "52.95.245.0/24",
+      "region": "us-east-1",
+      "service": "AMAZON"
+    },
+    {
+      "ip_prefix": "52.194.0.0/15",
+      "region": "ap-northeast-1",
+      "service": "AMAZON"
+    },
+    {
+      "ip_prefix": "54.155.0.0/16",
+      "region": "eu-west-1",
+      "service": "AMAZON"
+    },
+    {
+      "ip_prefix": "54.196.0.0/15",
+      "region": "us-east-1",
+      "service": "AMAZON"
+    },
+    {
+      "ip_prefix": "52.94.22.0/24",
+      "region": "us-gov-east-1",
+      "service": "AMAZON"
+    },
+    
+    
+curl -s https://ip-ranges.amazonaws.com/ip-ranges.json  | jq -r '.prefixes[].ip_prefix' 
+
+18.208.0.0/13
+52.95.245.0/24
+52.194.0.0/15
+54.155.0.0/16
+54.196.0.0/15
+52.94.22.0/24
+52.95.255.112/28
+13.210.0.0/15
+52.94.17.0/24
+52.95.154.0/23
+52.95.212.0/22
+54.239.0.240/28
+54.241.0.0/16
+184.169.128.0/17
+216.182.224.0/21
+52.74.0.0/16
+54.168.0.0/16
+54.239.54.0/23
+13.248.106.0/24
+52.119.224.0/21
+52.219.64.0/22
+
+
